@@ -1,0 +1,186 @@
+{
+  "info": {
+    "_postman_id": "df01aee6-de29-4e52-a21c-3db59d54e20e",
+    "name": "raizes-nordeste",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40504057"
+  },
+  "item": [
+    {
+      "name": "create",
+      "item": [
+        {
+          "name": "Usuarios",
+          "item": [
+            {
+              "name": "sucesso",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nome\": \"Maria Teste\",\r\n  \"email\": \"maria@exemplo.com\",\r\n  \"senha\": \"Senha@123\",\r\n  \"consentimentoLgpd\": true\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "usuario-duplicado",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nome\": \"Maria Teste\",\r\n  \"email\": \"maria@exemplo.com\",\r\n  \"senha\": \"Senha@123\",\r\n  \"consentimentoLgpd\": true\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "email-invalido",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nome\": \"Maria Teste\",\r\n  \"email\": \"mariaexemplo\",\r\n  \"senha\": \"Senha@123\",\r\n  \"consentimentoLgpd\": true\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "nome-invalido",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nome\": \"\",\r\n  \"email\": \"maria@exemplo.com\",\r\n  \"senha\": \"Senha@123\",\r\n  \"consentimentoLgpd\": true\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "senha-curta",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nome\": \"Maria Teste\",\r\n  \"email\": \"maria@exemplo.com\",\r\n  \"senha\": \"Sen\",\r\n  \"consentimentoLgpd\": true\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "body-vazio",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
