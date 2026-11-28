@@ -41,4 +41,12 @@ public class UsuarioService {
 
         return UsuarioResponse.de(usuarioRepository.save(usuario));
     }
+
+    public UsuarioResponse buscarPorId(Long id) {
+        Usuario usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND,
+                        "RECURSO_NAO_ENCONTRADO", "Usuário não encontrado."));
+        return UsuarioResponse.de(usuario);
+    }
+
 }
